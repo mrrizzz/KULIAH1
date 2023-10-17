@@ -1,0 +1,43 @@
+body {
+  position: absolute;
+  top: 250px;
+  left: 700px;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 70px;
+}
+.switch input {
+  opacity: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(da.jpg);
+  transition: 0.4s;
+  border-radius: 100px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 50px;
+  width: 50px;
+  left: 8px;
+  bottom: 8px;
+  background-image: url(sun_icon-icons.com_61830.jpg);
+  transition: 0.4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-image: url(cosmic-160340_640.png);
+}
+input:checked + .slider:before {
+  transform: translateX(84px);
+  background-image: url(moon_night_midnight_2768.jpg);
+}

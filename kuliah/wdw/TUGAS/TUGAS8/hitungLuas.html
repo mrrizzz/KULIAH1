@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Circle and Cube Calculations</title>
+    <script language="javascript" type="text/javascript">
+      function getCircleArea(r) {
+        return Math.PI * r * r;
+      }
+
+      function getCircleCircumference(r) {
+        return 2 * Math.PI * r;
+      }
+
+      function getCubeVolume(s) {
+        return s * s * s;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Circle and Cube Calculations</h1>
+    <form>
+      <p>Enter radius for circle (cm), press tab key or click on "area" or "circumference":</p>
+      <input
+        type="text"
+        name="radius"
+        size="6"
+        maxlength="7"
+        value="99",
+        onblur="circleArea.value=getCircleArea(parseFloat(radius.value)); circleCircumference.value=getCircleCircumference(parseFloat(radius.value));"
+      />
+      <input type="text" name="circleArea" size="6" maxlength="7" value="99" />
+      <input type="text" name="circleCircumference" size="6" maxlength="7" value="99" />
+
+      <p>Enter side length for cube (cm), press tab key or click on "volume":</p>
+      <input type="text" name="sideLength" size="6" maxlength="7" value="99" , onblur="cubeVolume.value=getCubeVolume(parseFloat(sideLength.value));" />
+      <input type="text" name="cubeVolume" size="6" maxlength="7" value="99" />
+    </form>
+  </body>
+</html>

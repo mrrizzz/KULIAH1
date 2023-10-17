@@ -1,0 +1,11 @@
+body{
+    background-color: rgba(186, 186, 186, 0.881);
+}
+.bungkus img{
+    margin: 10px 600px;
+
+}
+.bungkus h1{
+    margin-top: 5px  ;
+    text-align: center;
+}

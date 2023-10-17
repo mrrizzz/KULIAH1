@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const computer = Math.random();
+        let result ;
+        if(computer <= 0.5  && computer >= 0){
+            result = 'head';
+        }else {
+            result = 'tails';
+        }
+        // console.log(result);
+    </script>
+    <button onclick="
+    // if(result == 'head'){
+    //     console.log('you win');
+    // }else {
+    //     console.log('you lose');
+    // }
+    result == 'head' ? console.log('you win') : console.log('you lose');
+    ">heads</button>
+    <button onclick="
+    result == 'tails' ? console.log('you win') : console.log('you lose');   
+    ">tails</button>
+</body>
+</html>
