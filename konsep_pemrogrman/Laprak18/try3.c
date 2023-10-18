@@ -6,16 +6,16 @@ void printMatriks(int matriks[MAKS][MAKS]);
 int main()
 {
     int matriksA[MAKS][MAKS], matriksB[MAKS][MAKS], matriksC[MAKS][MAKS];
-    printf("masukkan matriks A = \n");
+    printf("masukkan matriks A : \n");
     matriks(matriksA);
-    printf("masukkan matriks B = \n");
+    printf("masukkan matriks B : \n");
     matriks(matriksB);
     penjumlahanMatriks(matriksA, matriksB, matriksC);
     printf("Matriks A : \n");
     printMatriks(matriksA);
     printf("Matriks B : \n");
     printMatriks(matriksB);
-    printf("Matriks C(Matriks A + Matriks B) : \n");
+    printf("Matriks C (Matriks A + Matriks B) : \n");
     printMatriks(matriksC);
 }
 void matriks(int matriks[MAKS][MAKS])
@@ -45,7 +45,7 @@ void printMatriks(int matriks[MAKS][MAKS])
     {
         for (int j = 0; j < MAKS; j++)
         {
-            printf("%4d", matriks[i][j]); // Menggunakan format lebar 4 digit untuk setiap elemen
+            printf("%4d", matriks[i][j]); 
         }
         printf("\n");
     }

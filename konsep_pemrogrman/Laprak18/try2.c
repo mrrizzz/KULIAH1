@@ -1,29 +1,30 @@
 #include <stdio.h>
 int main()
 {
-    int count = 1, banyak, first = 0, second = 1;
-    printf("masukkan banyak n = ");
-    scanf("%d", &banyak);
-    int next[10];
+    int batas, first = 0, second = 1;
+    printf("masukkan batas n = ");
+    scanf("%d", &batas);
+    int next[batas];
     next[0] = 0;
     next[1] = 1;
-    if (banyak >= 1)
+    if (batas >= 1)
     {
         printf("%d ", next[0]);
-        count++;
     }
-    if (banyak >= 2)
+    if (batas >= 2)
     {
         printf("%d ", next[1]);
-        count++;
     }
-
-    while (count <= banyak)
+    if (batas >= 3)
     {
-        next[count] = first + second;
-        printf("%d ", next[count]);
-        first = second;
-        second = next[count];
-        count++;
+        for (int i = 2; i < batas; i++)
+        {
+            next[i] = first + second;
+            if (next[i] >= batas)
+                break;
+            printf("%d ", next[i]);
+            first = second;
+            second = next[i];
+        }
     }
 }
