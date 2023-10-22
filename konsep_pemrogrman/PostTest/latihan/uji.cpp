@@ -1,12 +1,14 @@
-#include<stdio.h>
+#include<iostream>
+using namespace std;
 void walik();
 int main(){
+    string kalimat;
     char kal[100];
     printf("masukkan kalimat = ");
     walik();
     printf("\n");
 }
-void walik(){
+bool walik(string kal){
     char x;
 
     scanf("%c", &x);
@@ -15,5 +17,4 @@ void walik(){
     }
     if(x != '\n')
     printf("%c", x);
-
 }
