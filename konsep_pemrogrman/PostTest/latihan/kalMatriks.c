@@ -8,6 +8,7 @@ void inputKolom(int *kolom)
 {
     printf("kolom = ");
     scanf("%d", kolom);
+    printf("\n");
 }
 void inputMatriks(int baris, int kolom, int matriks[baris][kolom])
 {
@@ -35,33 +36,44 @@ void printMatriks(int baris, int kolom, int matriks[baris][kolom])
 int main()
 {
     int row[2], col[2];
-    printf("Masukkan matriks A : \n");
+    printf("NB : Syarat perkalian matriks adalah kolom matriks pertama = baris matriks kedua\n");
+    printf("Masukkan baris dan kolom matriks A : \n");
     inputBaris(&row[0]);
     inputKolom(&col[0]);
-    int matriksA[row[0]][col[0]];
-    inputMatriks(row[0], col[0], matriksA);
-    printf("Masukkan matriks B : \n");
+    printf("Masukkan baris dan kolom matriks B : \n");
     inputBaris(&row[1]);
     inputKolom(&col[1]);
-    int matriksB[row[1]][col[1]];
-    inputMatriks(row[1], col[1], matriksB);
-    int matriksC[row[0]][col[1]];
     if (col[0] == row[1])
     {
+        printf("Masukkan isi matriks A : \n");
+        int matriksA[row[0]][col[0]];
+        inputMatriks(row[0], col[0], matriksA);
+        printf("Masukkan isi matriks B : \n");
+        int matriksB[row[1]][col[1]];
+        inputMatriks(row[1], col[1], matriksB);
+        int matriksC[row[0]][col[1]];
         for (int i = 0; i < row[1]; i++)
         {
             for (int j = 0; j < col[0]; j++)
             {
                 int elemen = 0;
-                elemen += matriksA[i][j] * matriksB[j][i];
+                for (int k = 0; k < col[0]; k++)
+                {
+                    elemen += matriksA[i][k] * matriksB[k][j];
+                }
                 matriksC[i][j] = elemen;
             }
         }
+        printf("Maka hasil perkalian matriks A : \n");
+        printMatriks(row[0], col[0], matriksA);
+        printf("dikali dengan matriks B : \n");
+        printMatriks(row[1], col[1], matriksB);
+        printf("menghasilkan matriks C : \n");
+        printMatriks(row[0], col[1], matriksC);
+        printf("\n");
     }
-    printf("Maka hasil perkalian matriks A : \n");
-    printMatriks(row[0], col[0], matriksA);
-    printf("dikali dengan matriks B : \n");
-    printMatriks(row[1], col[1], matriksB);
-    printf("menghasilkan matriks C : \n");
-    printMatriks(row[0], col[1], matriksC);
+    else
+    {
+        printf("Input baris dan kolom tidak memenuhi syarat perkalian matriks\n");
+    }
 }
