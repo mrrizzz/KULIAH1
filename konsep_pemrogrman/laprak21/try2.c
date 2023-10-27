@@ -7,7 +7,7 @@ int hitung(char kal [100]){
     }
     return panjang - 1;
 }
-int main(){
+int main(){                                                                     
     char input[100];
     printf("Masukkan kalimat : ");
     fgets(input, sizeof(input), stdin);
