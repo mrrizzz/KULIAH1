@@ -14,6 +14,6 @@ void walik(){
         walik ();
     }
     if(x != '\n')
-    printf("%c", x);
+    printf("%c", x);  
 
 }
