@@ -1,6 +1,6 @@
 #include <stdio.h>
-int panjang = 0;
 int hitung(char kal [100]){
+    int panjang = 0;
     while (kal[panjang] != '\0') 
     { 
        panjang++;
@@ -11,6 +11,5 @@ int main(){
     char input[100];
     printf("Masukkan kalimat : ");
     fgets(input, sizeof(input), stdin);
-    input[panjang - 1] = '\0';
     printf("Hasil panjangnya : %d ", hitung(input));
 }
