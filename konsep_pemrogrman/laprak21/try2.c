@@ -1,5 +1,5 @@
 #include <stdio.h>
-int hitung(char kal [100]){
+int pjgstr(char kal [100]){
     int panjang = 0;
     while (kal[panjang] != '\0') 
     { 
@@ -11,5 +11,5 @@ int main(){
     char input[100];
     printf("Masukkan kalimat : ");
     fgets(input, sizeof(input), stdin);
-    printf("Hasil panjangnya : %d ", hitung(input));
+    printf("Hasil panjangnya : %d ", pjgstr(input));
 }
