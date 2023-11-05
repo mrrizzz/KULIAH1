@@ -1,15 +1,16 @@
 #include <stdio.h>
+int hitung(char kal[100])
+{
+    int panjang = 0;
+    while (kal[panjang] != '\0')
+    {
+        panjang++;
+    }
+    return panjang - 1;
+}
 int bandingstrl(char kal1[100], char kal2[100])
 {
-    int panjang1 = 0, panjang2 = 0, asci1 = 0, asci2 = 0;
-    while (kal1[panjang1] != '\0')
-    {
-        panjang1++;
-    }
-    while (kal2[panjang2] != '\0')
-    {
-        panjang2++;
-    }
+    int panjang1 = hitung(kal1), panjang2 = hitung(kal2), asci1 = 0, asci2 = 0;
     for (int i = 0; i < panjang1 - 1; i++)
     {
         asci1 += kal1[i];
@@ -18,16 +19,8 @@ int bandingstrl(char kal1[100], char kal2[100])
     {
         asci2 += kal2[i];
     }
-    if (asci1 > asci2)
-    {
-        return 1;
-    }
-    else if (asci1 == asci2)
-    {
-        return 0;
-    }
-    else
-        return -1;
+    return asci1 > asci2 ? 1 : asci1 == asci2 ? 0
+                                              : -1;
 }
 int main()
 {
@@ -37,17 +30,7 @@ int main()
     printf("Masukkan kalimat 2 : ");
     fgets(input2, sizeof(input2), stdin);
     int banding = bandingstrl(input, input2);
-    if (banding == 0)
-    {
-        printf("String 1 sama dengan string 2");
-    }
-    else if (banding == 1)
-    {
-        printf("String 1 lebih dari string 2");
-    }
-    else if (banding)
-    {
-        printf("string 1 kurang dari string 2");
-    }
+    printf("string 1 %s string 2", banding == 0 ? "sama dengan" : banding == 1 ? "lebih dari"
+                                                                               : "kurang dari");
     printf("\n");
 }
