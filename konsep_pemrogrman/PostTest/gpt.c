@@ -1,19 +1,37 @@
 #include <stdio.h>
-void main()
+#include <stdlib.h>
+#include <time.h>
+
+#define ROWS 9
+#define COLS 9
+
+void print_board(int board[ROWS][COLS])
 {
-    int j = 2, temp, b = 1;
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < ROWS; i++)
     {
-        temp = i % 2;
-        switch (temp)
+        for (int j = 0; j < COLS; j++)
         {
-        case 0:
-            j = j + ++b;
-            break;
-        case 1:
-            j = j + b++;
-            break;
+            printf("%d ", board[i][j]);
         }
-        printf("%d ", j);
+        printf("\n");
     }
+}
+
+int main()
+{
+    int board[ROWS][COLS] = {0};
+    srand(time(NULL));
+
+    // Generate random numbers for the board
+    for (int i = 0; i < ROWS; i++)
+    {
+        for (int j = 0; j < COLS; j++)
+        {
+            board[i][j] = rand() % 9 + 1;
+        }
+    }
+
+    print_board(board);
+
+    return 0;
 }

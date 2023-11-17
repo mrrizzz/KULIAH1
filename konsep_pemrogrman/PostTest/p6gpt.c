@@ -1,48 +1,27 @@
 #include <stdio.h>
+#include <string.h>
 
-int main() {
-    int inputmatkul, jam, totalnilai = 0, pembagi = 0, nilaiangka;
-    char nilaihuruf;
-    
-    printf("Masukkan jumlah mata kuliah = ");
-    scanf("%d", &inputmatkul);
-    
-    for (int i = 1; i <= inputmatkul; i++) {
-        getchar(); // Membersihkan karakter newline ('\n') dari input sebelumnya
-        printf("Nilai mata kuliah %d = ", i);
-        scanf(" %c", &nilaihuruf);
-        printf("Jumlah jam = ");
-        scanf("%d", &jam);
-        
-        switch (nilaihuruf) {
-            case 'A':
-                nilaiangka = 4;
-                break;
-            case 'B':
-                nilaiangka = 3;
-                break;
-            case 'C':
-                nilaiangka = 2;
-                break;
-            case 'D':
-                nilaiangka = 1;
-                break;
-            default:
-                printf("Nilai tidak valid\n");
-                i--; // Mengembalikan i agar penghitungan mata kuliah yang valid tetap benar
-                continue; // Melanjutkan ke iterasi berikutnya tanpa menghitung total
-        }
-        
-        totalnilai += (nilaiangka * jam); // Menghitung total nilai
-        pembagi += jam; // Menghitung total jam
-    }
-    
-    if (pembagi == 0) {
-        printf("Tidak ada jam yang diinput.\n");
-    } else {
-        float nilaiakhir = (float)totalnilai / pembagi; // Menghitung nilai akhir
-        printf("Nilai akhir anda adalah = %.2f\n", nilaiakhir); // Mencetak nilai akhir dengan dua desimal
-    }
-    
+int main()
+{
+    char input[100], input2[100];
+    printf("Masukkan kalimat 1 : ");
+    fgets(input, sizeof(input), stdin);
+    printf("Masukkan kalimat 2 : ");
+    fgets(input2, sizeof(input2), stdin);
+
+    // Menghapus karakter newline dari string masukan
+    // input[strcspn(input, "\n")] = '\0';
+    // input2[strcspn(input2, "\n")] = '\0';
+
+    printf("cek sensitif\n");
+    int banding = strcmp(input, input2);
+    printf("string 1 %s string 2", banding == 0 ? "sama dengan" : (banding > 0 ? "lebih dari" : "kurang dari"));
+    printf("\n");
+
+    printf("cek non sensitif\n");
+    int banding2 = stricmp(input, input2);
+    printf("string 1 %s string 2", banding2 == 0 ? "sama dengan" : (banding2 > 0 ? "lebih dari" : "kurang dari"));
+    printf("\n");
+
     return 0;
 }

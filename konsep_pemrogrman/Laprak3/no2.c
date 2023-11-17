@@ -7,7 +7,7 @@ int main(){
     int uang100000, uang50000, uang20000, uang10000, uang5000, uang2000, uang1000 ;
 
     uang100000 = duit / 100000;
-    duit %= 100000;
+            duit %= 100000;
     uang50000 = duit / 50000;
     duit %= 50000;
     uang20000 = duit / 20000;
