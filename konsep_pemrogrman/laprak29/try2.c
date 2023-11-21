@@ -7,9 +7,8 @@ int cekKalender(int dd, int mm, int yy)
 {
     if (mm < 1 || mm > 12 || dd < 1 || dd > 31)
         return 0;
-    int feb;
-    feb = (yy % 100 == 0) ? ((yy % 400 == 0) ? 29 : 28) : (yy % 4 == 0) ? 29
-                                                                        : 28;
+    int feb = (yy % 100 == 0) ? ((yy % 400 == 0) ? 29 : 28) : (yy % 4 == 0) ? 29
+                                                                            : 28;
     if (mm <= 7)
     {
         if (mm == 2)
