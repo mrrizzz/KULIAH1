@@ -18,13 +18,6 @@ int main()
         scanf(" %c", &arr[i]);
         for (int j = 0; j < i; j++)
         {
-            // if (arr[i] != arr[j])
-            // {
-            //     huruf[jumlah] = arr[i];
-            //     frekuensi[jumlah] = 1;
-            //     jumlah++;
-            // }
-
             if (arr[i] == huruf[j])
             {
                 frekuensi[j]++;
@@ -32,7 +25,7 @@ int main()
                 break;
             }
         }
-        if (muncul == 0)
+        if (!muncul)
         {
             huruf[jumlah] = arr[i];
             frekuensi[jumlah] = 1;

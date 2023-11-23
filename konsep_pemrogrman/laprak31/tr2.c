@@ -60,7 +60,7 @@ int main()
     printf("Berapa jumlah pegawai ? ");
     scanf("%d", &jumlah);
     pegawai emp[jumlah];
-    input(jumlah, &emp);
+    input(jumlah, emp);
     printf("\n");
-    output(jumlah, &emp);
+    output(jumlah, emp);
 }

@@ -8,6 +8,7 @@ void clearScreen()
     printf("\033[2J\033[H"); // For Linux/Unix
 #endif
 }
+
 struct nota
 {
     char jenis[30];
@@ -25,7 +26,7 @@ struct menu
 void printNota(int jumlah, struct nota total[jumlah], int pajak, int ovr)
 {
     printf("Nota belanja anda : \n");
-    printf("\t\t\tTOKO LARIS \n\n");
+    printf("\t\t\t\tTOKO LARIS \n\n");
     for (int i = 0; i < 80; i++)
     {
         printf("=");
@@ -88,9 +89,9 @@ void input(int *jumlah, int *ovr, int *pajak, struct nota total[*jumlah], struct
             total[index].diskon = total[index].jumlah_harga * 0.2;
             total[index].jumlah_harga -= total[index].diskon;
         }
-        ovr += total[index].jumlah_harga;
-        *pajak = *ovr / 10;
+        *ovr += total[index].jumlah_harga;
     }
+    *pajak = *ovr / 10;
 }
 int main()
 {
@@ -109,7 +110,6 @@ int main()
     }
     printf("\n");
     printf("Dapatkan diskon 20%% untuk pembelian lebih dari 10 potong...\nJangan lupa, pajaknya ya.... <10%% x harga diskon>\n");
-
     int jumlah, ovr = 0;
     int pajak;
     input(&jumlah, &ovr, &pajak, total, baju);
