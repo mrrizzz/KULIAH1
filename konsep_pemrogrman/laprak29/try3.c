@@ -30,12 +30,12 @@ int main()
         {'S', "Sayap", 3000}};
     struct nota total[10];
 
-    printf("Toko GFC - Gerobak fried chicken\n\n");
-    printf("DAFTAR HARGA : \n");
-    printf("Kode\tJenis\t\tHarga Per potong\n");
+    printf("\t\tToko GFC - Gerobak fried chicken\n\n");
+    printf("DAFTAR HARGA : \n\n");
+    printf("Kode\t\tJenis\t\t\tHarga Per potong\n");
     for (int i = 0; i < 3; i++)
     {
-        printf("%c\t%s\t\tRp.%d.00", fried[i].kode, fried[i].nama, fried[i].harga);
+        printf("%c\t\t%s\t\t\tRp.%d.00", fried[i].kode, fried[i].nama, fried[i].harga);
         printf("\n");
     }
     printf("\n");
@@ -59,18 +59,18 @@ int main()
         if (pilihan == 'P' || pilihan == 'p')
         {
             // In C, you cannot assign a string to a character array directly after it’s declared
-            strcpy(total[index].jenis, "Paha");
-            total[index].harga_satuan = 5000;
+            strcpy(total[index].jenis, fried[1].nama);
+            total[index].harga_satuan = fried[1].harga;
         }
         else if (pilihan == 'D' || pilihan == 'd')
         {
-            strcpy(total[index].jenis, "Dada");
-            total[index].harga_satuan = 4000;
+            strcpy(total[index].jenis, fried[0].nama);
+            total[index].harga_satuan = fried[0].harga;
         }
         else if (pilihan == 'S' || pilihan == 's')
         {
-            strcpy(total[index].jenis, "Sayap");
-            total[index].harga_satuan = 3000;
+            strcpy(total[index].jenis, fried[2].nama);
+            total[index].harga_satuan = fried[2].harga;
         }
         total[index].qty = qty;
         total[index].jumlah_harga = total[index].qty * total[index].harga_satuan;

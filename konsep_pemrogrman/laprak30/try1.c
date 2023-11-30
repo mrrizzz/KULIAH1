@@ -21,22 +21,6 @@ void printGaris()
         printf("=");
     }
 }
-// void printNilai(int jumlah, struct data mhs[jumlah])
-// {
-//     printf("DAFTAR NILAI\n");
-//     printf("MATAKULIAH KONSEP PEMROGRAMAN\n");
-//     printGaris();
-//     printf("\nNo.  Nama\t\t\t\t\tNilai\t\tGrade\n");
-//     printf("     Mahasiswa\t\tTugas\tUTS\tUAS\tAKHIR\tGrade\n");
-//     printGaris();
-//     printf("\n");
-
-//     for (int i = 0; i < jumlah; i++)
-//     {
-//         printf("%-5d%-30s%-8d%-8d%-8d%-8d%c\n", i + 1, mhs[i].nama, mhs[i].tugas, mhs[i].uts, mhs[i].uas, mhs[i].final, mhs[i].grade);
-//     }
-// }
-
 void printNilai(int jumlah, struct data mhs[jumlah])
 {
 
@@ -50,7 +34,7 @@ void printNilai(int jumlah, struct data mhs[jumlah])
     for (int i = 0; i < jumlah; i++)
     {
         printf("%d\t%s\b", i + 1, mhs[i].nama);
-        printf("\t\t%d\t%d\t%d\t%d\t%c\t\n", mhs[i].tugas, mhs[i].uts, mhs[i].uas, mhs[i].final, mhs[i].grade);
+        printf("\t\t\t\t%d\t%d\t%d\t%d\t\t%c\t\n", mhs[i].tugas, mhs[i].uts, mhs[i].uas, mhs[i].final, mhs[i].grade);
     }
 }
 int main()
